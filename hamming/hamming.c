@@ -5,7 +5,7 @@
 int compute(const char *lhs, const char *rhs)
 {
   int distance = 0;
-  for (; *lhs != '\0' && *rhs != '\0'; lhs++, rhs++)
+  for (; *lhs != '\0' && *rhs != '\0'; lhs++, rhs++) // '\0' terminating char pointing in memory
   {
     if (*lhs != *rhs)
     {
@@ -13,10 +13,5 @@ int compute(const char *lhs, const char *rhs)
     }
   }
 
-  if (*lhs != '\0' || *rhs != '\0')
-  {
-    return -1;
-  }
-
-  return distance;
+  return (*lhs || *rhs) ? -1 : distance;
 }
