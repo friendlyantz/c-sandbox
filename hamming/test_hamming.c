@@ -9,6 +9,11 @@ void tearDown(void)
 {
 }
 
+static void test_null_strands(void)
+{
+   TEST_ASSERT_EQUAL(-1, compute(NULL, ""));
+}
+
 static void test_empty_strands(void)
 {
    TEST_ASSERT_EQUAL(0, compute("", ""));
@@ -66,6 +71,7 @@ int main(void)
 {
    UNITY_BEGIN();
 
+   RUN_TEST(test_null_strands);
    RUN_TEST(test_empty_strands);
    RUN_TEST(test_single_identical_strands);
    RUN_TEST(test_single_letter_different_strands);
