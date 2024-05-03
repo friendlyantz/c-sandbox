@@ -13,9 +13,10 @@ int compute(const char *lhs, const char *rhs)
   }
 
   int distance = 0;
-  for (int i = 0; i < (int)lhs_lnegth; i++)
+  // for (int i = 0; i < (int)lhs_lnegth; i++)
+  for (; *lhs != '\0' && *rhs != '\0'; lhs++, rhs++)
   {
-    if (lhs[i] != rhs[i])
+    if (*lhs != *rhs)
     {
       distance++;
     }
