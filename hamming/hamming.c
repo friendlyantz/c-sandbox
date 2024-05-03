@@ -11,5 +11,14 @@ int compute(const char *lhs, const char *rhs)
   {
     return -1;
   }
-  return 0;
+
+  int distance = 0;
+  for (int i = 0; i < (int)lhs_lnegth; i++)
+  {
+    if (lhs[i] != rhs[i])
+    {
+      distance++;
+    }
+  }
+  return distance;
 }
